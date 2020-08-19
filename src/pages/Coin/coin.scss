@@ -1,0 +1,14 @@
+.container--coin {
+    margin: auto;
+    padding: 20px;
+}
+
+.coin-description {
+    padding: 20px 0;
+}
+
+@media (min-width: 1024px) {
+    .container--coin {
+        max-width: 1000px;
+    }
+}
