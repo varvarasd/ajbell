@@ -19,21 +19,19 @@ const Home = () => {
               .get(url)
               .then((res) => {
                 if (res && res.status === 200 && isMounted) {
-                    console.log('get coins is being called ===================')
-
                     setState({ coins: res.data.data.coins, isLoading: false});
                     setTimeout( getCoins, 3000 );
                 }
-                })
+              })
               .catch((err) => console.log(err, '=== GET COIN LIST ERROR ==='));
         }
         
         if (params.id) clearTimeout(getCoins)
         else getCoins();
         return () => { isMounted = false };
-    }, [params]);
+    }, []);
 
-    state.coins.sort((a, b) => parseFloat(a.price) > parseFloat(b.price) ? -1 : 1);
+    state.coins.sort((a, b) => a.price > b.price ? -1 : 1);
 
     const mainElement = <Fragment>
         <section className="hero">
