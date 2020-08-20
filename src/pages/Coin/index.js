@@ -30,7 +30,7 @@ const Coin = () => {
         })
         .catch((err) => console.log(err, '=== GET COIN INFO ERROR ==='));
         return () => { isMounted = false };
-    }, []);
+    }, [params]);
     
     const formatDescription = (desc) => {
         if(typeof desc !== 'string') return null;

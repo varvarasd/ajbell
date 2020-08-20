@@ -29,7 +29,7 @@ const Home = () => {
         if (params.id) clearTimeout(getCoins)
         else getCoins();
         return () => { isMounted = false };
-    }, []);
+    }, [params]);
 
     state.coins.sort((a, b) => a.price > b.price ? -1 : 1);
 
